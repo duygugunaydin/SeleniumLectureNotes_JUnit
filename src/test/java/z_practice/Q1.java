@@ -1,4 +1,4 @@
-package practice;
+package z_practice;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 public class Q1 {

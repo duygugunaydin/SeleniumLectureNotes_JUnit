@@ -1,6 +1,6 @@
-package practice.odevler;
+package z_practice.odevler;
 
-public class Odev3 {
+public class Odev3_ {
     // .......Exercise5........
     /*
     Navigate to website https://testpages.herokuapp.com/styled/index.html
