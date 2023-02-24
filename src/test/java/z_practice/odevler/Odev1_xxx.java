@@ -12,21 +12,21 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
-public class Odev1_ {
+public class Odev1_xxx {
 
 
 /* ...Exercise3...
-    go to url : https://www.techlistic.com/p/selenium-practice-form.html
-    fill the firstname
-    fill the lastname
-    check the gender
-    check the experience
-    fill the date
-    choose your profession -> Automation Tester
-    choose your tool -> Selenium Webdriver
-    choose your continent -> Antartica
-    choose your command  -> Browser Commands
-    click submit button
+    // 1 // go to url : https://www.techlistic.com/p/selenium-practice-form.html
+    // 2 // fill the firstname
+    // 3 // fill the lastname
+    // 4 // check the gender
+    // 5 // check the experience
+    // 6 // fill the date
+    // 7 // choose your profession -> Automation Tester
+    // 8 // choose your tool -> Selenium Webdriver
+    // 9 // choose your continent -> Antartica
+    // 10 // choose your command  -> Browser Commands
+    // 11 // click submit button
  */
 
     static WebDriver driver ;
@@ -36,19 +36,27 @@ public class Odev1_ {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
     @AfterClass
     public static void teardown(){
-        driver.close();
+        //driver.close();
     }
     @Test
-    public void Test01(){
+    public void Test01() throws InterruptedException {
+
+        // 1 //
         driver.get("https://www.techlistic.com/p/selenium-practice-form.html");
         driver.findElement(By.xpath("//button[@id='ez-accept-all']")).click();
-        driver.findElement(By.xpath("//span[text()='Close']"));
-        driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("Duygu");
-        driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys("Gunaydin");
+
+        WebElement frameElementi=driver.findElement(By.xpath("//iframe[@id='google_esf']"));
+        driver.switchTo().frame(frameElementi);
+        driver.findElement(By.xpath("//div[@id='dismiss-button']")).click();
+        driver.switchTo().parentFrame();
+
+
+        driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("Jane");
+        driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys("Doe");
         driver.findElement(By.xpath("//input[@id='sex-1']")).click();
         driver.findElement(By.xpath("//input[@id='exp-0']")).click();
         driver.findElement(By.xpath("//input[@id='datepicker']")).sendKeys("20-02-23");

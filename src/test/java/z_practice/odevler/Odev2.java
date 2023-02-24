@@ -14,13 +14,13 @@ import java.time.Duration;
 public class Odev2 {
 
                 /* ...Exercise4...
-                   Navigate to  https://testpages.herokuapp.com/styled/index.html
-                   Click on  Calculater under Micro Apps
-                   Type any number in the first input
-                   Type any number in the second input
-                   Click on Calculate
-                   Get the result
-                   Print the result
+                   // 1 // Navigate to  https://testpages.herokuapp.com/styled/index.html
+                   // 2 // Click on  Calculater under Micro Apps
+                   // 3 // Type any number in the first input
+                   // 4 // Type any number in the second input
+                   // 5 // Click on Calculate
+                   // 6 // Get the result
+                   // 7 // Print the result
                  */
 
     static WebDriver driver;
@@ -38,14 +38,26 @@ public class Odev2 {
     }
     @Test
     public void Test01(){
+
+        // 1 //
         driver.get("https://testpages.herokuapp.com/styled/index.html");
+
+        // 2 //
         driver.findElement(By.xpath("//a[@id='calculatetest']")).click();
+
+        // 3 //
         driver.findElement(By.xpath("//input[@id='number1']")).sendKeys("10");
+
+        // 4 //
         driver.findElement(By.xpath("//input[@id='number2']")).sendKeys("10");
+
+        // 5 //
         driver.findElement(By.xpath("//input[@id='calculate']")).click();
 
+        // 6 //
         String result= driver.findElement(By.xpath("//span[@id='answer']")).getText();
 
+        // 7 //
         System.out.println(result);
 
     }
